@@ -7,6 +7,7 @@ const router = require('./routes/Educationroute');
 const router1=require('./routes/serviceroutes')
 const router2=require('./routes/shelterroutes')
 const blogs=require('./routes/blogsroute')
+const donation=require('./routes/donationroute')
 app.use(express.json());
 app.use(cors());
 
@@ -24,11 +25,11 @@ DBCon()
     console.error("Database connection failed", err);
   });
 
-// Routes
 app.use('/ngo1',router1)
 app.use('/ngo', router);
 app.use('/ngo2',router2)
 app.use('/blog',blogs)
+app.use('/donation',donation)
 app.get('/', (req, res) => {
   res.json({ message: "message" });
 });
