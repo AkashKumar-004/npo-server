@@ -3,10 +3,7 @@ const mongoose = require('mongoose');
 // Define the DBCon function
 const DBCon = async () => {
   try {
-    await mongoose.connect(process.env.MONGODB, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    await mongoose.connect(process.env.MONGODB)
     console.log('Successfully connected to the database');
   } catch (error) {
     console.error('Error connecting to the database:', error);
